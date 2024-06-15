@@ -1,5 +1,4 @@
-main.py
 proxies.txt
 results.txt
 twitters.txt
-random_world/twitter_id.py
+__pycache__/
