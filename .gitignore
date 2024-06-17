@@ -1,4 +1,4 @@
 proxies.txt
-results.txt
+results.*
 twitters.txt
 __pycache__/

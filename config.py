@@ -1,5 +1,6 @@
 from enum import IntEnum
 from pathlib import Path
+from typing import Literal
 
 
 class Actions(IntEnum):
@@ -15,7 +16,9 @@ class Actions(IntEnum):
 ACTION_SEQUENCE = [
     Actions.FOLLOW, 
     Actions.LIKE, 
-    Actions.QUOTE
+    Actions.RETWEET,
+    Actions.QUOTE,
+    Actions.REPLY
 ]
 
 # файлы с данными
@@ -25,8 +28,13 @@ LIKE_TXT = Path("to_like.txt") # файл с твитами для лайка
 FOLLOW_TXT = Path("to_follow.txt") # файл с аккаунтами для подписки
 RETWEET_TXT = Path("to_retweet.txt") # файл с твитами для ретвита
 PHRASES_TXT = Path("quote_phrases.txt") # файл с фразами для цитат
-QUOTES_TXT = Path("to_quote.txt") # файл с твитами для цитат
+QUOTE_TXT = Path("to_quote.txt") # файл с твитами для цитат
 REPLY_MSGS_TXT = Path("reply_msgs.txt") # файл с сообщениями для ответов
-REPLIES_TXT = Path("to_reply.txt") # файл с твитами для ответов
+REPLY_TXT = Path("to_reply.txt") # файл с твитами для ответов
 
-RESULTS_TXT = Path("results.txt") # файл с результатами
+RESULTS_CSV = Path("results.csv") # файл с результатами
+
+# время ожидания между циклами в секундах
+# можно указать кортеж или список из двух чисел, тогда будет выбираться случайное время между ними
+# или просто число - тогда будет ждать ровно столько секунд
+SLEEP_TIME: tuple | list | int = (3, 10) 
