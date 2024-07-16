@@ -195,9 +195,8 @@ async def main():
                             continue
                         except Exception as exc:
                             print(f"Что-то очень плохое: {exc}")
-                            result[act_key] = (
-                                f"ERROR {exc.__str__().replace("\n", ' ')}"
-                            )
+                            err_ctx = exc.__str__().replace("\n", ' ')
+                            result[act_key] = f"ERROR {err_ctx}"
                             continue
         except Exception as err:
             print(err)
